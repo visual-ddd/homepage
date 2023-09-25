@@ -22,8 +22,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: pnpm i
-      - run: pnpm build.full
+      - name: build
+        run: |
+          pnpm install
+          pnpm build.full
+        env:
+          PUBLIC_BUILDER_API_KEY: ${{PUBLIC_BUILDER_API_KEY}}
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
