@@ -27,7 +27,7 @@ jobs:
           pnpm install
           pnpm build.full
         env:
-          PUBLIC_BUILDER_API_KEY: ${{PUBLIC_BUILDER_API_KEY}}
+          PUBLIC_BUILDER_API_KEY: ${{ secrets.PUBLIC_BUILDER_API_KEY }}
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
