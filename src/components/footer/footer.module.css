@@ -1,6 +1,10 @@
 .wrapper {
   margin: 0 auto;
-  padding: 30px 40px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .anchor {
@@ -14,4 +18,24 @@
 
 .anchor:hover {
   color: var(--qwik-light-blue);
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes header-scroll {
+    0%,
+    88% {
+      padding: 10px 20px;
+      background-color: transparent;
+    }
+
+    100% {
+      padding: 30px 5vw;
+      background-color: var(--header-background);
+    }
+  }
+
+  .wrapper {
+    animation: linear header-scroll both;
+    animation-timeline: scroll();
+  }
 }
