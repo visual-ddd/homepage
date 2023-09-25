@@ -1,0 +1,1 @@
+import{a7 as a}from"./q-7b277545.js";import{a as r}from"./q-2feefdb9.js";const l=o=>{const[t,e]=r();return a({code:e,context:t.context,localState:t.localState,rootState:t.rootState,rootSetState:t.rootSetState,event:o})};export{l as s_7wCAiJVliNE};
